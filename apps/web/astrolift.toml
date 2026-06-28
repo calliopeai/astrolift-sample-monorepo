@@ -1,0 +1,14 @@
+name = "mono-web"
+[[workloads]]
+name = "web"
+kind = "deployment"
+is_public = true
+  [[workloads.containers]]
+  name = "app"
+  is_primary = true
+  image_ref = "docker.io/calliopeai/astrolift-sample-api:main-df5ffa3"
+  port = 8080
+    [workloads.containers.healthcheck]
+    kind = "http"
+    value = "/health"
+    port = 8080
