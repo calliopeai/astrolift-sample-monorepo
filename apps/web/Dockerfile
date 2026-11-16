@@ -1,4 +1,4 @@
-FROM python:3.12-alpine
+FROM python:3.12-slim-bookworm
 WORKDIR /app
 COPY server.py ./server.py
 USER 10001:10001
